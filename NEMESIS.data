@@ -1,0 +1,18 @@
+[nemesis]
+id=local.hkmc.carplay-autoswitch
+name=HKMC CarPlay Auto-Switch
+version=2.5
+types=application,service
+preuninstall=scripts/preuninstall.sh
+
+[app.0]
+kind=sh
+path=bin/diagnostics.sh
+uid=root
+
+[service.0]
+name=apply
+kind=sh
+path=svc/watch.sh
+uid=root
+mode=restart
